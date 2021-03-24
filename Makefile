@@ -2,14 +2,15 @@ NAME		=	a.out
 
 LIBS		=	
 
-CXXFLAGS	=	-Wall -Wextra -g3
+CXXFLAGS	=	-Wall -Wextra -g3 -std=c++17
 
-SRC			=	src/main.cpp
+SRC			=	src/main.cpp				\
+				lib/JsonPars/JsonPars.cpp
 				# lib/MapFunc/MapFunc.cpp 
 
 OBJS		=	$(SRC:.cpp=.o)
 
-CC			= g++
+CC			= c++
 
 $(NAME): $(OBJS)	
 	$(CC) -o $(NAME) $(OBJS) $(CFLAGS) $(LIBS)

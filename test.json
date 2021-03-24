@@ -1,0 +1,26 @@
+{
+    "server_name": "Zia-Server",
+    "ip": "127.0.0.1",
+    "port": "8080",
+    "ssl_port": "8081",
+    "ssl_port_nb": 8081,
+    "test0": {
+        "nb" : 10,
+        "testttt": {
+            "1" : 1,
+            "2" : "2"
+        }
+    },
+
+    "tab" : [
+        "1",
+        "2",
+        10,
+        {
+            "test": 1
+        }
+    ],
+
+    "doc_root": "www/",
+    "number_of_thread": 100
+}
