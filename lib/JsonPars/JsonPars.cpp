@@ -1,7 +1,6 @@
 #include "JsonPars.hpp"
 
-
-JsonPars::JsonPars(std::string p) : path(p), file(p)
+JsonPars::JsonPars(std::string p) : path(p), file(p), indx(0)
 {
     if (this->file) {
         this->mapJ = this->parsingJson();
@@ -27,15 +26,13 @@ Obj_s JsonPars::parsingJson()
 
         if (i == ',' || i == '}' || i == ']') {
             if (!inTab) {
-                if (valType == "str") Obj.str[name] = val;
-                if (valType == "int") Obj.nbr[name] = std::stoi(val);
-                // std::cout << "1 n : " << name << " v : " << val << std::endl;
+                if (valType == "str") Obj.map<std::string>[name] = val;
+                if (valType == "int") Obj.map<int>[name] = std::stoi(val);
                 name = "";
                 inVal = false;
             } else {
-                if (valType == "str") Obj.tabStr[name].push_back(val);
-                if (valType == "int") Obj.tabNbr[name].push_back(std::stoi(val));
-                // std::cout << "2 n : " << name << " v : " << val << std::endl;
+                if (valType == "str") Obj.map<std::vector<std::string>>[name].push_back(val);
+                if (valType == "int") Obj.map<std::vector<int>>[name].push_back(std::stoi(val));
             }
 
             if (i == '}') return (Obj);
@@ -49,11 +46,9 @@ Obj_s JsonPars::parsingJson()
             if (i == '[') inTab = true;
 
             if (!inTab) {
-                if (i == '{') Obj.obj[name] = this->parsingJson();
-                // std::cout << "3 n : " << name << " v : " << val << std::endl;
+                if (i == '{') Obj.map<Obj_s>[name] = this->parsingJson();
             } else {
-                if (i == '{') Obj.tabObj[name].push_back(this->parsingJson());
-                // std::cout << "4 n : " << name << " v : " << val << std::endl;
+                if (i == '{') Obj.map<std::vector<Obj_s>>[name].push_back(this->parsingJson());
             }
         }
 
@@ -63,9 +58,4 @@ Obj_s JsonPars::parsingJson()
         }
     }
     return (Obj);
-}
-
-Obj_s JsonPars::getJson()
-{
-    return (this->mapJ);
 }
