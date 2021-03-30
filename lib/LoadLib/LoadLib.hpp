@@ -23,7 +23,6 @@ class LoadLib
             dlerror();
         };
         ~LoadLib() {
-            this->destroy_l(this->create_l());
             dlclose(this->handle);
         };
 
@@ -41,5 +40,9 @@ class LoadLib
                 std::cerr << "[ERROR " << this->path << "] : Cannot load symbol destroy" << "\n[ERROR Lib] : ->" << dlerror() <<  std::endl;
             
             return (this->create_l());
+        }
+
+        void destroyLib(T *lib) {
+            this->destroy_l(lib);
         }
 };

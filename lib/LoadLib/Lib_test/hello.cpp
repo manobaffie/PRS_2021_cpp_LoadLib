@@ -1,8 +1,7 @@
 #include "hello.hpp"
 
-hello::hello()
+hello::hello(std::string f) : from(f)
 {
-    this->from = "hello from : ";
 }
 
 hello::~hello()
@@ -12,12 +11,12 @@ hello::~hello()
 
 void hello::printHello()
 {
-    std::cout << this->from << std::endl;
+    std::cout << "hello from : " << this->from << std::endl;
 }
 
 extern "C" {
     ILib* create() {
-        return new hello();
+        return new hello("default");
     }
 
     void destroy(hello* obj) {

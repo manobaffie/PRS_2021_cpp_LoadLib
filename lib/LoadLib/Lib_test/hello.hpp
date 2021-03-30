@@ -8,7 +8,7 @@ class hello : public ILib
         std::string from;
 
     public:
-        hello();
+        hello(std::string f);
         ~hello() override;
 
         void printHello() override;

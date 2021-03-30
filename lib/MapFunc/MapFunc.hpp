@@ -3,16 +3,6 @@
 #include <vector>
 #include <map>
 
-// void test()
-// {
-//     MapFunc mp;
-//     std::function<void(int, int)> f = [&] (int a, int b) {
-//         std::cout << "calc : " << a << "+" << b << "=" << a + b << std::endl;
-//     };
-//     mp.addFunc("add", f);
-//     mp.exeFunc<void, std::function<void(int, int)>>("add", 5, 10);
-// }
-
 class MapFunc {
     private:
         template<class T>
