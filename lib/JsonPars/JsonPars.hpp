@@ -19,10 +19,7 @@ class JsonPars
         std::ifstream file;
 
         Obj_s mapJ;
-
         int indx;
-    
-        std::any tmp;
 
         template <class T>
         static T temp;
@@ -53,7 +50,7 @@ class JsonPars
             // // std::cout << " res : " << Obj_s::map<T>[p[this->indx]] << std::endl;
             // // std::cout << " res : " << Obj_s::map<T>[p[this->indx]] << std::endl;
 
-            this->indx++;
+            // this->indx++;
             
             // this->getJson<Ts...>(p);
             // if (sizeof...(Ts) == 0) {
