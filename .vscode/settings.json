@@ -48,6 +48,9 @@
         "any": "cpp",
         "locale": "cpp",
         "ctime": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "thread": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp"
     }
 }

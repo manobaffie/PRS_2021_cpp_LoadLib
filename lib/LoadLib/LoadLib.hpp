@@ -1,8 +1,6 @@
 #include <iostream>
 #include <dlfcn.h>
 
-#include "ILib.hpp"
-
 template <class T>
 class LoadLib
 {

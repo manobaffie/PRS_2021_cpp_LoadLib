@@ -8,7 +8,7 @@ CXXFLAGS	=	-Wall -Wextra -g3 -std=c++17 -c -fpic
 
 all:
 	c++ $(CXXFLAGS) $(SRC)
-	c++ -shared -o $(NAME) $(OBJS)
+	c++ -shared -o $(NAME) $(OBJS) -lsfml-graphics -lsfml-window -lsfml-system
 
 clean:
 	rm -rf $(OBJS)

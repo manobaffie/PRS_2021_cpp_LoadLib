@@ -8,4 +8,3 @@ class ILib
 
         virtual void printHello() = 0;
 };
-
