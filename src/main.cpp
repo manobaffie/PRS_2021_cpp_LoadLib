@@ -6,14 +6,13 @@
 // #include "../lib/Log/Log.hpp"
 // #include "../lib/LoadLib/ILib.hpp"
 
-#include "../lib/math/math.hpp"
+#include "../lib/math/matrix/matrix.hpp"
+#include "../lib/math/graph/graph.hpp"
 
-
-int main()
+int main(int argc, char const *argv[])
 {
     std::cout << "=== start ===" << std::endl;
-
-    math m;
+    
 
     return (0);
 }
