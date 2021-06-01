@@ -5,12 +5,12 @@ LIBS		=	-ldl
 CXXFLAGS	=	-Wall -Wextra -g3 -std=c++17 
 
 SRC			=	src/main.cpp				\
-				lib/math/matrix.cpp			\
-				lib/math/graph.cpp
-				# lib/JsonPars/JsonPars.cpp
-				# lib/Log/ILog.cpp
-				# lib/Thread/Thread.cpp
-				# lib/MapFunc/MapFunc.cpp
+				lib/math/graph/graph.cpp		\
+				# lib/math/matrix.cpp			\
+				# lib/JsonPars/JsonPars.cpp		\
+				# lib/Log/ILog.cpp				\
+				# lib/Thread/Thread.cpp			\
+				# lib/MapFunc/MapFunc.cpp		\
 
 OBJS		=	$(SRC:.cpp=.o)
 

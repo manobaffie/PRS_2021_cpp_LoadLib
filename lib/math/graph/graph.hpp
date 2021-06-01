@@ -1,14 +1,20 @@
 #include <vector>
 #include <iostream>
 
-class graph
+struct point
+{
+    std::string name;
+    std::vector<point *> p;
+};
+
+class graph3D
 {
     private:
-        std::vector<std::vector<float>> value;
+        std::vector<std::vector<std::vector<point>>> value;
 
     public:
-        graph(int dimension);
-        ~graph();
+        graph3D(int xSize, int ySize, int zSize);
+        ~graph3D();
 
         void linkPoint();
         void setPoint();

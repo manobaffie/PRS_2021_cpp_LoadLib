@@ -9,9 +9,11 @@
 #include "../lib/math/matrix/matrix.hpp"
 #include "../lib/math/graph/graph.hpp"
 
-int main(int argc, char const *argv[])
+int main(/*int argc, char const *argv[]*/)
 {
     std::cout << "=== start ===" << std::endl;
+
+    graph3D g(10, 10, 10);
     
 
     return (0);
